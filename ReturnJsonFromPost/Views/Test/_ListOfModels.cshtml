@@ -1,0 +1,22 @@
+﻿@model ReturnJsonFromPost.Models.MyViewModel
+
+@if (!string.IsNullOrWhiteSpace(Model.ErrorMessage))
+{
+    <div class="alert alert-danger" id="alert-error">@Model.ErrorMessage</div>
+}
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Models)
+        </th>
+    </tr>
+
+    @foreach (var item in Model.Models) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Data)
+            </td>
+        </tr>
+    }    
+</table>

@@ -1,0 +1,18 @@
+﻿@using ReturnJsonFromPost.Models
+@model MyViewModel
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<div id="list-of-models">
+    @Html.Partial("_ListOfModels", Model)
+</div>
+
+@Html.Partial("_Create", new MyModel())
+
+@section scripts {
+    <script src="~/Scripts/jquery.unobtrusive-ajax.min.js"></script>
+}

@@ -1,0 +1,20 @@
+﻿@model ReturnJsonFromPost.Models.MyModel
+
+@using (Ajax.BeginForm(
+    "Create",
+    "Test",
+    new
+    {
+        SomeParam = 123
+    },
+    new AjaxOptions
+    {
+        HttpMethod = "POST",
+        UpdateTargetId = "list-of-models",
+        InsertionMode = InsertionMode.Replace
+    }
+))
+{
+    @Html.EditorForModel()
+    <input type="submit" value="Save" class="btn btn-default" />
+}
